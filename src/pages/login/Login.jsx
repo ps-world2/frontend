@@ -1,8 +1,8 @@
-import React from 'react'
+import React, {useState} from 'react'
+import styled from 'styled-components';
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
+import kakaologo from 'assets/img/kakao_login_medium_wide.png'
 
 const style = {
   position: 'absolute',
@@ -17,6 +17,8 @@ const style = {
 };
 
 export default function Login({open, handleClose}) {
+  const [test, setTest] = useState(false)
+  console.log(test);
   return (
     <div>
       <Modal
@@ -26,14 +28,16 @@ export default function Login({open, handleClose}) {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-          <Typography id="modal-modal-title" variant="h6" component="h2">
-            로그인
-          </Typography>
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            test
-          </Typography>
+          <h1 className="modal-title" align="center">로그인</h1>
+          <LoginBody>
+            <img src={kakaologo} onClick={() => setTest(true)}></img>
+          </LoginBody>
         </Box>
       </Modal>
     </div>
   )
 }
+
+const LoginBody = styled.div`
+  text-align: center;
+`

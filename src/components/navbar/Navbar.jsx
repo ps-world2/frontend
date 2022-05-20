@@ -1,10 +1,10 @@
-import React from "react";
+import React, {useState} from "react";
 import { AppBar, Tabs, Tab } from "@material-ui/core";
 import Login from "pages/login/Login";
 
 export default function Navbar() {
-  const [value, setValue] = React.useState(0);
-  const [loginModal, setLoginModal] = React.useState(false);
+  const [value, setValue] = useState(0);
+  const [loginModal, setLoginModal] = useState(false);
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
