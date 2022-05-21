@@ -5,3 +5,4 @@ export default function Category() {
     <p>카테고리</p>
   )
 }
+

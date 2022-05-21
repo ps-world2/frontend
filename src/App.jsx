@@ -1,7 +1,7 @@
-import React from 'react';
-import Navbar from 'components/navbar/Navbar'
-import {BrowserRouter, Route, Routes} from 'react-router-dom'
-import Main from 'pages/main/Main';
+import React from "react";
+import Navbar from "components/navbar/Navbar";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Main from "pages/main/Main";
 
 function App() {
   return (
@@ -15,6 +15,5 @@ function App() {
     </BrowserRouter>
   );
 }
-
 
 export default App;
