@@ -8,9 +8,9 @@ function App() {
     <BrowserRouter>
       <Navbar />
       <Routes>
-        <Route path="/" element={<Main />}></Route>
-        <Route path="/network" element={<p>Network Page</p>}></Route>
-        <Route path="*" element={<p>잘못된 접근입니다.</p>}></Route>
+        <Route path="/" element={<Main />} />
+        <Route path="/network" element={<p>Network Page</p>} />
+        <Route path="*" element={<p>잘못된 접근입니다.</p>} />
       </Routes>
     </BrowserRouter>
   );

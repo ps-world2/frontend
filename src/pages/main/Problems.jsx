@@ -34,7 +34,7 @@ const PROGRAMMERS = 3;
 
 export default function Problems({ platform }) {
   const [problems, setProblems] = useState();
-  const dump_data = {
+  const dumpData = {
     problems: [
       {
         platform: 1,
@@ -81,19 +81,21 @@ export default function Problems({ platform }) {
     ],
   };
 
-  const handleProblem = platform => {
+  const handleProblem = () => {
     switch (platform) {
       case ALL:
-        setProblems(dump_data.problems);
+        setProblems(dumpData.problems);
         break;
       case BAEKJOON:
-        setProblems(dump_data.problems.filter(x => x.platform === BAEKJOON));
+        setProblems(dumpData.problems.filter(x => x.platform === BAEKJOON));
         break;
       case LEETCODE:
-        setProblems(dump_data.problems.filter(x => x.platform === LEETCODE));
+        setProblems(dumpData.problems.filter(x => x.platform === LEETCODE));
         break;
       case PROGRAMMERS:
-        setProblems(dump_data.problems.filter(x => x.platform === PROGRAMMERS));
+        setProblems(dumpData.problems.filter(x => x.platform === PROGRAMMERS));
+        break;
+      default:
         break;
     }
   };
@@ -104,20 +106,20 @@ export default function Problems({ platform }) {
   console.log(platform);
   console.log(problems);
   return (
-    <>
+    <div>
       {!problems ? (
         <p>등록된 문제가 없습니다!</p>
       ) : (
         <Box sx={{ flexGrow: 1 }}>
           <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
-            {problems.map((info, index) => (
-              <Grid item xs={2} sm={4} md={4} key={index}>
-                <Problem info={info}></Problem>
+            {problems.map(info => (
+              <Grid item xs={2} sm={4} md={4} key={info.pnum}>
+                <Problem info={info} />
               </Grid>
             ))}
           </Grid>
         </Box>
       )}
-    </>
+    </div>
   );
 }

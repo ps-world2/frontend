@@ -32,7 +32,9 @@ export default function Login({ open, handleClose }) {
             로그인
           </h1>
           <LoginBody>
-            <img src={kakaologo} onClick={() => setTest(true)}></img>
+            <a href="test" onClick={() => setTest(true)}>
+              <img src={kakaologo} alt="kakaologin" />
+            </a>
           </LoginBody>
         </Box>
       </Modal>

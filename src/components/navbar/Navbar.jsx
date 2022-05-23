@@ -13,8 +13,7 @@ export default function Navbar() {
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-  const handleLogin = (event, newValue) => {
-    console.log(event);
+  const handleLogin = () => {
     setLoginModal(true);
   };
   const handleCloseModal = () => {

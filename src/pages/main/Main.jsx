@@ -12,9 +12,9 @@ export default function Main() {
   console.log("Main Render");
   return (
     <>
-      <Platform value={platform} handlePlatform={handlePlatform}></Platform>
+      <Platform value={platform} handlePlatform={handlePlatform} />
       <Category />
-      <Problems platform={platform}></Problems>
+      <Problems platform={platform} />
     </>
   );
 }
