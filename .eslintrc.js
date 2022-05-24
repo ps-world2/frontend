@@ -1,10 +1,10 @@
 module.exports = {
   env: {
     browser: true,
-    es6: true,
-    node: true,
+    es2021: true,
+    amd: true,
   },
-  extends: ["airbnb", "plugin:prettier/recommended"],
+  extends: ["eslint:recommended", "airbnb", "plugin:prettier/recommended"],
   ignorePatterns: ["index.js", "reportWebVitals.js"],
   rules: {
     "import/no-unresolved": "off",
