@@ -1,5 +1,5 @@
 import { React, useState } from "react";
-import Category from "pages/main/Category";
+import Tag from "pages/main/Tag";
 import Platform from "pages/main/Platform";
 import Problems from "pages/main/Problems";
 
@@ -8,12 +8,10 @@ export default function Main() {
   const handlePlatform = (event, newPlatform) => {
     setPlatform(newPlatform);
   };
-
-  console.log("Main Render");
   return (
     <>
       <Platform value={platform} handlePlatform={handlePlatform} />
-      <Category />
+      <Tag />
       <Problems platform={platform} />
     </>
   );
