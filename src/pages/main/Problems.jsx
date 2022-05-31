@@ -1,31 +1,7 @@
 import { React, useState, useEffect } from "react";
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
-import Typography from "@mui/material/Typography";
-import { CardActionArea } from "@mui/material";
+import Problem from "components/problem/Problem";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
-
-function Problem({ info }) {
-  console.log(info);
-  return (
-    <Card sx={{ maxWidth: 500 }}>
-      <CardActionArea>
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
-            {info.title}
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            {info.pnum}
-          </Typography>
-          <Typography variant="caption" color="text.secondary">
-            {info.solved_rank}
-          </Typography>
-        </CardContent>
-      </CardActionArea>
-    </Card>
-  );
-}
 
 const ALL = 0;
 const BAEKJOON = 1;
@@ -103,23 +79,20 @@ export default function Problems({ platform }) {
   useEffect(() => {
     handleProblem(platform);
   }, [platform]);
-  console.log(platform);
-  console.log(problems);
+
   return (
-    <div>
-      {!problems ? (
-        <p>등록된 문제가 없습니다!</p>
-      ) : (
-        <Box sx={{ flexGrow: 1 }}>
-          <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
-            {problems.map(info => (
-              <Grid item xs={2} sm={4} md={4} key={info.pnum}>
-                <Problem info={info} />
-              </Grid>
-            ))}
-          </Grid>
-        </Box>
-      )}
-    </div>
+    <Box sx={{ flexGrow: 1 }}>
+      <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
+        <Grid item xs={2} sm={4} md={4} key="add">
+          <Problem />
+        </Grid>
+        {problems &&
+          problems.map(info => (
+            <Grid item xs={2} sm={4} md={4} key={String(info.pnum) + info.solved_rank}>
+              <Problem info={info} />
+            </Grid>
+          ))}
+      </Grid>
+    </Box>
   );
 }
