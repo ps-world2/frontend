@@ -5,6 +5,7 @@ import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import { CardActionArea } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
+import { Link } from "react-router-dom";
 
 export default function Problem({ info }) {
   return (
@@ -23,9 +24,11 @@ export default function Problem({ info }) {
             </Typography>
           </CardContent>
         ) : (
-          <Box textAlign="center">
-            <AddIcon sx={{ fontSize: 100 }} />
-          </Box>
+          <Link to="/post" style={{ color: "black" }}>
+            <Box textAlign="center">
+              <AddIcon sx={{ fontSize: 100 }} />
+            </Box>
+          </Link>
         )}
       </CardActionArea>
     </Card>
