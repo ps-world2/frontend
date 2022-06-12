@@ -11,5 +11,7 @@ module.exports = {
     "react/prop-types": 0,
     "no-extra-semi": "error",
     "react/jsx-props-no-spreading": [1, { custom: "ignore" }],
+    "react/no-children-prop": [0, { allowFunctions: true }],
+    "import/no-extraneous-dependencies": ["off"],
   },
 };
