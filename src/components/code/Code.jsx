@@ -1,13 +1,13 @@
 import React from "react";
 import CodeEditor from "@uiw/react-textarea-code-editor";
 
-export default function Code({ code, setCode, language, readOnly }) {
+export default function Code({ id, code, update, language, readOnly }) {
   return (
     <CodeEditor
       value={code}
       language={language}
       placeholder="Input Code"
-      onChange={e => setCode(e.target.value)}
+      onChange={e => update(id, e.target.value)}
       padding={15}
       style={{
         backgroundColor: "#30363d",

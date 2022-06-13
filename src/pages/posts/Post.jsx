@@ -3,11 +3,10 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
-import CodeInput from "components/code/Code";
+import CodeAccordions from "pages/posts/CodeAccordions";
 
 export default function Post() {
   const [inputValue, setInputValue] = useState("");
-  const [code, setCode] = useState();
 
   const handlePost = () => {
     console.log(inputValue);
@@ -15,7 +14,7 @@ export default function Post() {
 
   return (
     <div>
-      <CodeInput code={code} setCode={setCode} />
+      <CodeAccordions />
       <ReactMarkdown children={inputValue} remarkPlugins={[remarkGfm]} />
       <TextField id="fullWidth" label="글" multiline rows={30} onChange={e => setInputValue(e.target.value)} />
       <Button variant="contained" onClick={handlePost}>
