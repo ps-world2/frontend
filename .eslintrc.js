@@ -13,5 +13,6 @@ module.exports = {
     "react/jsx-props-no-spreading": [1, { custom: "ignore" }],
     "react/no-children-prop": [0, { allowFunctions: true }],
     "import/no-extraneous-dependencies": ["off"],
+    "import/prefer-default-export": "off",
   },
 };
