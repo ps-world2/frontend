@@ -16,6 +16,8 @@ const style = {
   p: 4,
 };
 
+const KAKAO_API_URL = `${process.env.REACT_APP_API_KAKAO_LOGIN}`;
+
 export default function Login({ open, handleClose }) {
   const [test, setTest] = useState(false);
   console.log(test);
@@ -32,7 +34,7 @@ export default function Login({ open, handleClose }) {
             로그인
           </h1>
           <LoginBody>
-            <a href="test" onClick={() => setTest(true)}>
+            <a href={KAKAO_API_URL} onClick={() => setTest(true)}>
               <img src={kakaologo} alt="kakaologin" />
             </a>
           </LoginBody>
